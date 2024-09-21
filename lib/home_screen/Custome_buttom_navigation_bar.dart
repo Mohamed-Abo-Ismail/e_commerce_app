@@ -20,23 +20,23 @@ Widget buildCustomBottomNavigationBar(
       items: [
         BottomNavigationBarItem(
             icon: CircleAvatar(
-          foregroundColor:
-              selectedIndex == 0 ? Color(0xff004182) : Colors.white,
-          backgroundColor:
-              selectedIndex == 0 ? Colors.white : Colors.transparent,
-          radius: 20.r,
-          child: ImageIcon(
-            size: 40.sp,
-            const AssetImage('assets/white home icon.png'),
-          ),
-        ),
-          label: 'home'),
+              foregroundColor:
+                  selectedIndex == 0 ? Color(0xff004182) : Colors.white,
+              backgroundColor:
+                  selectedIndex == 0 ? Colors.white : Colors.transparent,
+              radius: 20.r,
+              child: ImageIcon(
+                size: 40.sp,
+                const AssetImage('assets/white home icon.png'),
+              ),
+            ),
+            label: 'home'),
         BottomNavigationBarItem(
             icon: CircleAvatar(
               foregroundColor:
-              selectedIndex == 1 ? Color(0xff004182) : Colors.white,
+                  selectedIndex == 1 ? Color(0xff004182) : Colors.white,
               backgroundColor:
-              selectedIndex == 1 ? Colors.white : Colors.transparent,
+                  selectedIndex == 1 ? Colors.white : Colors.transparent,
               radius: 20.r,
               child: ImageIcon(
                 size: 40.sp,
@@ -47,9 +47,9 @@ Widget buildCustomBottomNavigationBar(
         BottomNavigationBarItem(
             icon: CircleAvatar(
               foregroundColor:
-              selectedIndex == 2 ? Color(0xff004182) : Colors.white,
+                  selectedIndex == 2 ? Color(0xff004182) : Colors.white,
               backgroundColor:
-              selectedIndex == 2 ? Colors.white : Colors.transparent,
+                  selectedIndex == 2 ? Colors.white : Colors.transparent,
               radius: 20.r,
               child: ImageIcon(
                 size: 40.sp,
@@ -60,9 +60,9 @@ Widget buildCustomBottomNavigationBar(
         BottomNavigationBarItem(
             icon: CircleAvatar(
               foregroundColor:
-              selectedIndex == 3 ? Color(0xff004182) : Colors.white,
+                  selectedIndex == 3 ? Color(0xff004182) : Colors.white,
               backgroundColor:
-              selectedIndex == 3 ? Colors.white : Colors.transparent,
+                  selectedIndex == 3 ? Colors.white : Colors.transparent,
               radius: 20.r,
               child: ImageIcon(
                 size: 40.sp,

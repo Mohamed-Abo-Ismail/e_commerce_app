@@ -1,5 +1,7 @@
+import 'package:e_commerce_app/home_screen/homeScreen.dart';
 import 'package:e_commerce_app/login/cubit/login_cubit.dart';
 import 'package:e_commerce_app/login/cubit/login_states.dart';
+import 'package:e_commerce_app/utils/shared_preference_utils.dart';
 import 'package:e_commerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
       bloc: cubit,
       listener: (context,state){
         if(state is LoginLoadingState){
-          DialogUtils.showLoading(context, 'Waiting....');
+          DialogUtils.showLoading(context, 'Waiting......');
         }else if(state is LoginErrorState){
           DialogUtils.hideLoading(context);
           DialogUtils.showMessage(context: context, content:state.errorMessage,
@@ -30,6 +32,8 @@ class _LoginScreenState extends State<LoginScreen> {
           DialogUtils.hideLoading(context);
           DialogUtils.showMessage(context: context, content:'Login Successfully',
               posActionName: 'ok',title: 'Success');
+          SharedPreferenceUtils.saveData(key: 'Token', value: state.response.token);
+          Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
         }
       },
 

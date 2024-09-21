@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../my_customes/CustomTextField.dart';
 import '../../my_customes/Grid_view_cart_item.dart';
 import '../../my_customes/MyAssets.dart';
+import '../../product_details_view/product_details_view.dart';
 
 class ProductListTab extends StatelessWidget {
   ProductTabViewModel viewModel = ProductTabViewModel();
@@ -67,7 +68,7 @@ class ProductListTab extends StatelessWidget {
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
-                                  childAspectRatio: 2 / 24,
+                                  childAspectRatio: 6/8,
                                   crossAxisSpacing: 16.w,
                                   mainAxisSpacing: 16.h),
                           itemBuilder: (context, index) {
@@ -75,10 +76,11 @@ class ProductListTab extends StatelessWidget {
                               splashColor: Colors.transparent,
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              onTap: () {
-                                //Navigator.of(context).pushNamed();
+                              onTap: () {Navigator.of(context).pushNamed(ProductDetailsView.routName);
+                                arguments: viewModel.productList[index];
                               },
-                              child: GridViewCartItem(product: viewModel.productList[index],),
+                              child:
+                              GridViewCartItem(product: viewModel.productList[index],),
                             );
                           }))
             ],
